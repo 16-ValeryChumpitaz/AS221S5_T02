@@ -1,0 +1,102 @@
+/* Importar Bootstrap */
+@import url('https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css');
+
+/* Colores */
+:root {
+  --primary: #0046df;
+  --dark: #09115a;
+  --light: #11a4f3;
+  --white: #FFFFFF;
+  --yellow: #FDD835;
+}
+
+/* Botones */
+.btn {
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Cambiar el color del texto a blanco */
+.navbar-nav .nav-link {
+  color: white !important;
+}
+
+.navbar-brand h1 {
+  color: var(--primary);
+  border-bottom: 2px solid var(--primary);
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.nav-link, .dropdown-item {
+  color: var(--primary) !important;
+}
+
+.btn-xl {
+  background-color: #eb3e05;
+  color: white;
+  padding: 1rem 2rem;
+  font-size: 1.25rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease;
+  margin-right: 10px;
+}
+
+.btn-xl:hover {
+  background-color: #00ff6a;
+}
+
+.masthead {
+  background: url('/assets/imgs/carousel-1.jpg') no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+  color: white;
+}
+
+.masthead h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: rgb(255, 255, 255);
+
+}
+
+.masthead h3 {
+  font-size: 1.75rem;
+  font-style: italic;
+  color: rgb(255, 255, 255);
+
+}
+
+/* Estilos para las imágenes */
+.event-item img {
+  width: 50%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+/* Efecto hover para las imágenes */
+.event-item img:hover {
+  transform: scale(1.05);
+}
+
+.team-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.team-item img {
+  max-width: 50%;
+  margin-bottom: 10px; /* Espacio entre la imagen y el texto */
+}
+
+.position-relative img {
+  width: 200%; /* Ajusta el ancho de la imagen al 100% del contenedor */
+  max-width: 800px; /* Establece un ancho máximo para la imagen */
+  display: block; /* Para centrar la imagen horizontalmente */
+  margin: 0 auto; /* Centra la imagen horizontalmente */
+}
+
