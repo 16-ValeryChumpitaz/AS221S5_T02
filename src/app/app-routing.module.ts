@@ -10,12 +10,14 @@ import { AgregarUserComponent } from './user/agregar-user/agregar-user.component
 import { ActualizarUserComponent } from './user/actualizar-user/actualizar-user.component';
 import { MenuComponent } from './menu/menu.component';
 import { PaginaWebComponent } from './pagina-web/pagina-web.component';
+import { LoginComponent } from './login/login.component';
 
 
 const routes: Routes = [
 
-{ path: 'menu', component: MenuComponent },
+{ path: '', redirectTo: '/pagina-web', pathMatch: 'full' },
 { path: 'pagina-web', component: PaginaWebComponent},
+{ path: 'menu', component: MenuComponent },
 { path: 'formulario', component: FormularioComponent },
 { path: 'formulario/inactivos', component: FormularioInactivosComponent },
 { path: 'formulario/agregar', component: AgregarFormularioComponent },
@@ -24,7 +26,8 @@ const routes: Routes = [
 { path: 'user/inactivos', component: UserInactivosComponent },
 { path: 'user/agregar', component: AgregarUserComponent },
 { path: 'user/actualizar/:id', component: ActualizarUserComponent },
-{ path: '', redirectTo: '/users', pathMatch: 'full' }
+{ path: 'login', component: LoginComponent }
+
 ];
 
 @NgModule({

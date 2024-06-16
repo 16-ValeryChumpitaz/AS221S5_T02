@@ -17,6 +17,7 @@ import { NgbModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UserService } from './services/user.service';
 import { MenuComponent } from './menu/menu.component';
 import { PaginaWebComponent } from './pagina-web/pagina-web.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { PaginaWebComponent } from './pagina-web/pagina-web.component';
     UserComponent,
     MenuComponent,
     PaginaWebComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
