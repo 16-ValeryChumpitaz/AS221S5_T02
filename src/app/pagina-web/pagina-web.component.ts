@@ -9,7 +9,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./pagina-web.component.css']
 })
 export class PaginaWebComponent {
-  title = 'cetpro';
+  title = 'CETPRO';
 
   contactForm: any = {
     nombre: '',

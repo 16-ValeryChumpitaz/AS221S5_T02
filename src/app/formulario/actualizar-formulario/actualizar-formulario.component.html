@@ -7,7 +7,7 @@
                 (change)="onUserIdChange($event)"
                 [ngClass]="{'is-valid': userIdColor === 'green', 'is-invalid': userIdColor === 'red'}">
                 <option value="" disabled selected>Seleccionar usuario</option>
-                <option *ngFor="let user of users" [value]="user.id">{{ user.name }}</option>
+                <option *ngFor="let user of users" [value]="user.id">{{user.name + ' __ ' + user.document_type + ' : ' + user.document_number }}</option>
             </select>
             <div [style.color]="userIdColor">{{ userIdMessage }}</div>
         </div>

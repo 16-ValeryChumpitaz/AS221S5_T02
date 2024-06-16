@@ -40,7 +40,7 @@ export class FormularioInactivosComponent implements OnInit {
     this.userService.getActiveUsers().subscribe((data: User[]) => {
       this.users = data;
       this.userMap = data.reduce((map: { [key: string]: string }, user) => {
-        map[user.id] = user.name;
+        map[user.id] = user.document_type + ' : ' + user.document_number;
         return map;
       }, {});
     });
