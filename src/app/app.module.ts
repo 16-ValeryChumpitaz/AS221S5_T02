@@ -18,6 +18,10 @@ import { UserService } from './services/user.service';
 import { MenuComponent } from './menu/menu.component';
 import { PaginaWebComponent } from './pagina-web/pagina-web.component';
 import { LoginComponent } from './login/login.component';
+import { ProgrammeStudyComponent } from './programme-study/programme-study.component';
+import { AgregarProgramaStudyComponent } from './agregar-programa-study/agregar-programa-study.component';
+import { InactivoProgramaStudyComponent } from './inactivo-programa-study/inactivo-programa-study.component';
+import { ActualizarProgramaStudyComponent } from './actualizar-programa-study/actualizar-programa-study.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +37,10 @@ import { LoginComponent } from './login/login.component';
     MenuComponent,
     PaginaWebComponent,
     LoginComponent,
+    ProgrammeStudyComponent,
+    AgregarProgramaStudyComponent,
+    InactivoProgramaStudyComponent,
+    ActualizarProgramaStudyComponent,
   ],
   imports: [
     BrowserModule,

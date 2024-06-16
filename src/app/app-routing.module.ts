@@ -11,23 +11,30 @@ import { ActualizarUserComponent } from './user/actualizar-user/actualizar-user.
 import { MenuComponent } from './menu/menu.component';
 import { PaginaWebComponent } from './pagina-web/pagina-web.component';
 import { LoginComponent } from './login/login.component';
-
-
+import { ProgrammeStudyComponent } from './programme-study/programme-study.component';
+import { AgregarProgramaStudyComponent } from './programme-study/agregar-programa-study/agregar-programa-study.component';
+import { ActualizarProgramaStudyComponent } from './programme-study/actualizar-programa-study/actualizar-programa-study.component';
+import { InactivoProgramaStudyComponent } from './programme-study/inactivo-programa-study/inactivo-programa-study.component';
 const routes: Routes = [
-
-{ path: '', redirectTo: '/pagina-web', pathMatch: 'full' },
-{ path: 'pagina-web', component: PaginaWebComponent},
-{ path: 'menu', component: MenuComponent },
-{ path: 'formulario', component: FormularioComponent },
-{ path: 'formulario/inactivos', component: FormularioInactivosComponent },
-{ path: 'formulario/agregar', component: AgregarFormularioComponent },
-{ path: 'formulario/actualizar/:id', component: ActualizarFormularioComponent },
-{ path: 'user', component: UserComponent },
-{ path: 'user/inactivos', component: UserInactivosComponent },
-{ path: 'user/agregar', component: AgregarUserComponent },
-{ path: 'user/actualizar/:id', component: ActualizarUserComponent },
-{ path: 'login', component: LoginComponent }
-
+  { path: '', redirectTo: '/pagina-web', pathMatch: 'full' },
+  { path: 'pagina-web', component: PaginaWebComponent },
+  { path: 'menu', component: MenuComponent },
+  { path: 'formulario', component: FormularioComponent, children: [
+    { path: 'inactivos', component: FormularioInactivosComponent },
+    { path: 'agregar', component: AgregarFormularioComponent },
+    { path: 'actualizar/:id', component: ActualizarFormularioComponent }
+  ]},
+  { path: 'user', component: UserComponent, children: [
+    { path: 'inactivos', component: UserInactivosComponent },
+    { path: 'agregar', component: AgregarUserComponent },
+    { path: 'actualizar/:id', component: ActualizarUserComponent }
+  ]},
+  { path: 'login', component: LoginComponent },
+  { path: 'programme-study', component: ProgrammeStudyComponent, children: [
+    { path: 'agregar', component: ProgrammeStudyComponent },
+    { path: 'actualizar/:id', component: ActualizarProgramaStudyComponent },
+    { path: 'inactivos', component: ProgrammeStudyComponent }
+  ]}
 ];
 
 @NgModule({
