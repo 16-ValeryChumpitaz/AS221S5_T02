@@ -19,9 +19,9 @@ import { MenuComponent } from './menu/menu.component';
 import { PaginaWebComponent } from './pagina-web/pagina-web.component';
 import { LoginComponent } from './login/login.component';
 import { ProgrammeStudyComponent } from './programme-study/programme-study.component';
-import { AgregarProgramaStudyComponent } from './agregar-programa-study/agregar-programa-study.component';
-import { InactivoProgramaStudyComponent } from './inactivo-programa-study/inactivo-programa-study.component';
-import { ActualizarProgramaStudyComponent } from './actualizar-programa-study/actualizar-programa-study.component';
+import { AgregarProgramaStudyComponent } from './programme-study/agregar-programa-study/agregar-programa-study.component';
+import { ActualizarProgramaStudyComponent } from './programme-study/actualizar-programa-study/actualizar-programa-study.component';
+import { InactivoProgramaStudyComponent } from './programme-study/inactivo-programa-study/inactivo-programa-study.component';
 
 @NgModule({
   declarations: [
@@ -39,8 +39,8 @@ import { ActualizarProgramaStudyComponent } from './actualizar-programa-study/ac
     LoginComponent,
     ProgrammeStudyComponent,
     AgregarProgramaStudyComponent,
-    InactivoProgramaStudyComponent,
     ActualizarProgramaStudyComponent,
+    InactivoProgramaStudyComponent
   ],
   imports: [
     BrowserModule,
@@ -53,4 +53,5 @@ import { ActualizarProgramaStudyComponent } from './actualizar-programa-study/ac
   providers: [UserService, NgbModal],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

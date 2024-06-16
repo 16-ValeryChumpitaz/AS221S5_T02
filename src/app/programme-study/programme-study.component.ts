@@ -5,10 +5,10 @@ import { of } from 'rxjs';
 import Swal from 'sweetalert2';
 
 import { StudyProgramme } from '../interfaces/study-programme.model';
-import { StudyProgrammeService } from '../services/study-programme';
-import * as XLSX from 'xlsx'; // Importar XLSX para exportar a CSV y Excel
-import jsPDF from 'jspdf'; // Importar jsPDF para exportar a PDF
-import 'jspdf-autotable'; // Importar autotable para jsPDF
+import { StudyProgrammeService } from '../services/study-programme.service';
+import * as XLSX from 'xlsx';
+import jsPDF from 'jspdf';
+import 'jspdf-autotable';
 
 @Component({
   selector: 'app-programme-study',
@@ -20,9 +20,8 @@ export class ProgrammeStudyComponent implements OnInit {
   filteredProgrammes: StudyProgramme[] = [];
   filtro: string = '';
   searchModule: string = '';
-  searchStatus: string = ''; // Asegúrate de que esta propiedad esté definida y del tipo correcto
+  searchStatus: string = '';
   statusFilter: any;
-programmeStudies: any;
 
   constructor(
     private studyProgrammeService: StudyProgrammeService,
@@ -49,8 +48,8 @@ programmeStudies: any;
       )
       .subscribe((data: StudyProgramme[]) => {
         this.programmes = data;
-        this.filteredProgrammes = data; // Inicializa filteredProgrammes con todos los datos
-        this.filterResults(); // Filtra inicialmente los resultados
+        this.filteredProgrammes = data;
+        this.filterResults();
       });
   }
 
@@ -66,8 +65,6 @@ programmeStudies: any;
       return matchesName && matchesModule && matchesStatus;
     });
   }
-
-  // Métodos para exportar a CSV, Excel y PDF (definidos como en la respuesta anterior)
 
   exportToCSV(): void {
     const ws: XLSX.WorkSheet = XLSX.utils.json_to_sheet(
@@ -117,6 +114,7 @@ programmeStudies: any;
     doc.save('Programmes.pdf');
   }
 
+
   updateProgramme(programme: StudyProgramme): void {
     this.router.navigate(['/programme-study/actualizar', programme.id]);
   }
@@ -134,7 +132,7 @@ programmeStudies: any;
     }).then((result) => {
       if (result.isConfirmed) {
         this.studyProgrammeService
-          .deactivateProgramme(programme.id)
+          .deleteProgramme(programme.id)
           .subscribe(() => {
             this.obtenerProgrammes(); // Refresca la lista de programas de estudio
             Swal.fire(
