@@ -68,7 +68,7 @@ body.dark {
     max-width: 100%;
     height: auto;
     display: block;
-  }
+}
 
 .search_bar {
     height: 47px;
@@ -83,8 +83,8 @@ body.dark {
     border-radius: 25px;
     font-size: 18px;
     outline: none;
-    background-color:#ddd;
-    color:rgb(0, 0, 0);
+    background-color: #ddd;
+    color: rgb(0, 0, 0);
     border: 1px solid #F1B61B;
     padding: 0 20px;
 }
@@ -367,13 +367,112 @@ body.dark {
     background: #FFD24C;
 
 }
+
 /* menu.component.css */
 body.menu-open .landing-page {
     display: none;
+}
+
+.menu-open main {
+    margin-left: 0;
+    /* Ajusta según sea necesario */
+}
+
+
+
+.navbar_content {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.profile {
+    cursor: pointer;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 50px;
+    /* Ajusta según tu diseño */
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    z-index: 1000;
+}
+
+.dropdown-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-menu li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.dropdown-menu li:hover {
+    background-color: #f0f0f0;
+}
+
+/*VENTANA EMERGENTE PARA CERRAR SESION*/
+.navbar_content {
+    position: relative;
+    display: flex;
+    align-items: center;
   }
   
-  .menu-open main {
-    margin-left: 0; /* Ajusta según sea necesario */
+  .profile-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
   }
+  
+  .profile {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .popover {
+    background-color: #115aae; /* Custom blue color */
+    border: 1px solid #e0e0e0; /* Light border color */
+    box-shadow: 0 4px 8px #000000;
+    border-radius: 5px;
+    z-index: 1000;
+    right: 0; /* Position the popover to the right */
+    margin-bottom: 30px;
+    margin-top: 50px;
+    width: 100px;
+    
 
+  }
+  
+  .popover nav {
+    padding: 0;
+  }
+  
+  .menu-item {
+    display: flex;
+    align-items: center;
+    padding: 0px;
+    text-decoration: none;
+    color: #ffffff; /* White text */
+    cursor: pointer;
+  }
+  
+  .menu-item:hover {
+    background-color: #FFD700; /* Gold background color */
+    color: black; /* Black text */
+  }
+  
+  .popover svg {
+    margin-right: 0.5rem;
+  }
+  
   

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -17,8 +18,9 @@ export class MenuComponent implements OnInit {
   isSidebarClosed = false;
   isSidebarHoverable = false;
   isTreasurySubmenuOpen = false;
+  isProfileMenuOpen = false; // Añade esta línea
 
-  constructor() {
+  constructor(private router: Router) {
     // Obtener las referencias a los elementos del DOM en el constructor
     this.body = document.querySelector("body") as HTMLBodyElement;
     this.sidebar = document.querySelector(".sidebar") as HTMLElement;
@@ -52,15 +54,24 @@ export class MenuComponent implements OnInit {
     }
   }
 
-
   toggleTreasurySubmenu() {
     this.isTreasurySubmenuOpen = !this.isTreasurySubmenuOpen;
   }
+
   expandSidebar() {
     this.isSidebarClosed = false;
   }
 
   collapseSidebar() {
     this.isSidebarClosed = true;
+  }
+
+  toggleProfileMenu() {
+    this.isProfileMenuOpen = !this.isProfileMenuOpen;
+  }
+
+  logout() {
+    // Lógica para cerrar sesión, si es necesario
+    this.router.navigate(['/pagina-web']);
   }
 }
