@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
 import { ContactFormService } from 'src/app/services/formulario.service';
 import Swal from 'sweetalert2';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-pagina-web',
@@ -24,7 +24,8 @@ export class PaginaWebComponent {
   };
 
   forbiddenWords = ['carajo', 'maldición', 'huevada', 'xd', 'mrd'];
-  
+  showButton: any;
+
 
   constructor(private userService: UserService, private contactFormService: ContactFormService) {}
 
@@ -84,7 +85,7 @@ export class PaginaWebComponent {
         this.contactForm.correo = userData.email;
         this.contactForm.tipoDocumento = userData.document_type;
         this.contactForm.numeroDocumento = userData.document_number;
-      
+
         // Puedes rellenar otros campos según los datos obtenidos
       },
       (error) => {
@@ -149,4 +150,13 @@ export class PaginaWebComponent {
     return '';
   }
 
+//Boton para ir para arriba
+@HostListener('window:scroll', [])
+onWindowScroll() {
+  this.showButton = window.pageYOffset > 300;
+}
+
+scrollToTop(): void {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
 }

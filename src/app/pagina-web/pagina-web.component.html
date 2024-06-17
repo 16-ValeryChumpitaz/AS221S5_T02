@@ -25,6 +25,10 @@
 
 
 <!-- Inicio de la barra superior -->
+<button class="back-to-top" (click)="scrollToTop()" *ngIf="showButton">
+  &#8679;
+</button>
+
 <div class="fixed-top">
   <div class="container-fluid bg-warning px-5 d-none d-lg-block" style="color: #f7d511e6; ">
     <div class="row gx-0">
@@ -102,7 +106,6 @@
     <a class="btn btn-xl" href="#" target="_blank">Asistencia</a>
   </div>
 </header>
-
 
 <!-- Acerca de Inicio -->
 <section class="nosotros" id="nosotros">
@@ -455,10 +458,11 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-4  wow zoomIn" data-wow-delay="0.9s" style="min-height: 350px;">
-          <div class="position-relative h-100">
-            <img class="w-100" src="assets/imgs/blog-1.jpg" alt="Descripción de la imagen">
-          </div>
+        <div class="col-lg-4 position-relative overflow-hidden">
+          <video autoplay muted loop class="w-100 h-100 position-absolute top-0 left-0">
+            <source src="assets/video/background-video.mp4" type="video/mp4">
+            Tu navegador no soporta videos HTML5.
+          </video>
         </div>
         <div class="col-lg-4">
           <div class="row g-5">
@@ -469,9 +473,7 @@
               </div>
               <h4>Misión de la I.E.P</h4>
               <p class="mb-0">Promovemos la adquision de competencias laborales y capacidades empresariales,
-                emprendedoras, productivas, actitudes y valores
-
-              </p>
+                emprendedoras, productivas, actitudes y valores</p>
             </div>
             <div class="col-12 wow zoomIn" data-wow-delay="0.8s">
               <div class="bg-primary rounded d-flex align-items-center justify-content-center mb-3"
@@ -487,7 +489,7 @@
     </div>
   </div>
 </section>
-<!-- Características Fin-->
+
 
 
 <!-- Inicio del calendario -->
@@ -1512,7 +1514,7 @@
                 <p class="mb-0">&copy; <a class="text-white border-bottom"
                     href="https://code.visualstudio.com/">2024</a>.
                   Todos los derechos reservados.
-                  <a class="text-white border-bottom" href="https://.com">Valery Chumpitaz</a>
+                  <a class="text-white border-bottom" href="https://.com">Jonathan Espichan & Valery Chumpitaz</a>
                 </p>
               </div>
             </div>

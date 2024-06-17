@@ -202,8 +202,57 @@ input.ng-invalid.ng-touched, select.ng-invalid.ng-touched, textarea.ng-invalid.n
   color: black;
   border-color: #000000;
   border-radius: 20px;
-  
+
 }
 
 
+/* Estilo para el video de fondo */
+.about .col-lg-4 {
+  position: relative;
+  overflow: hidden;
+}
 
+.about video {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* Ajuste para los elementos de la sección */
+.about .section-title {
+  margin-bottom: 50px; /* Espacio inferior para el título */
+}
+
+/*boton arriba*/
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 20px;
+  background-color: #115aae; /* Color azul */
+  color: #fff; /* Texto blanco */
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Sombra */
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; /* Transiciones suaves */
+  opacity: 0.7; /* Opacidad inicial */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-to-top:hover {
+  opacity: 1; /* Opacidad completa al pasar el cursor */
+  transform: scale(1.1); /* Efecto de agrandamiento al pasar el cursor */
+}
+
+.back-to-top:active {
+  transform: scale(0.9); /* Efecto de reducción al hacer clic */
+}
